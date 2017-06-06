@@ -28,6 +28,10 @@ p = subprocess.Popen([venv_python, django_admin, 'startproject', proj_name])
 p.communicate()
 
 os.chdir(proj_name)
+os.makedirs('static')
+os.makedirs('static/js')
+os.makedirs('static/css')
+os.makedirs('templates')
 
 if app_name:
     subprocess.Popen([venv_python, django_admin, 'startapp', app_name])
