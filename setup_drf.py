@@ -20,6 +20,8 @@ execfile('venv/bin/activate_this.py', dict(__file__='venv/bin/activate_this.py')
 pip.main(['install', 'django-extensions'])
 pip.main(['install', 'djangorestframework'])
 pip.main(['install', 'Django'])
+pip.main(['install', 'markdown-editor'])
+pip.main(['install', 'django-nose'])
 
 django_admin = os.getcwd() + '/venv/bin/django-admin.py'
 venv_python = os.getcwd() + '/venv/bin/python'
@@ -39,5 +41,6 @@ if app_name:
 if app_name:
     sys.stdout.write("Django %s project successfully created with %s application name.\n" % (proj_name, app_name))
 else:
-    sys.stdout.write("Django %s project successfully created.\n" % proj_name)
+    sys.stdout.write("Django %s project successfully created.\n" % proj_name + \
+                    "Don't forget to configure settings py for django-extensions and django-nose.")
 
